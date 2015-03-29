@@ -10,8 +10,13 @@
 #include <serial.h>
 #include <asm/arch/stm32.h>
 
+#ifdef CONFIG_STM32F4
 #define STM32_USART1_BASE	(STM32_APB2PERIPH_BASE + 0x1000)
 #define RCC_APB2ENR_USART1EN	(1 << 4)
+#else
+#define STM32_USART1_BASE	(STM32_APB2PERIPH_BASE + 0x3800)
+#define RCC_APB2ENR_USART1EN	(1 << 14)
+#endif
 
 #define USART_BASE		STM32_USART1_BASE
 #define RCC_USART_ENABLE	RCC_APB2ENR_USART1EN
