@@ -1,0 +1,5 @@
+M:	Matt Porter <mporter@konsulko.com>
+S:	Maintained
+F:	board/st/stm3210e-eval/
+F:	include/configs/stm3210e-eval.h
+F:	configs/stm3210e-eval_defconfig

@@ -1,0 +1,19 @@
+if TARGET_STM3210E_EVAL
+
+config SYS_BOARD
+	string
+	default "stm3210e-eval"
+
+config SYS_VENDOR
+	string
+	default "st"
+
+config SYS_SOC
+	string
+	default "stm32f1"
+
+config SYS_CONFIG_NAME
+	string
+	default "stm3210e-eval"
+
+endif
