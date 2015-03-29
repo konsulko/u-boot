@@ -731,6 +731,10 @@ config ARCH_UNIPHIER
 	select SPL
 	select OF_CONTROL
 
+config TARGET_STM3210E_EVAL
+	bool "Support STM3210E-EVAL board"
+	select CPU_V7M
+
 config TARGET_STM32F429_DISCOVERY
 	bool "Support STM32F429 Discovery"
 	select CPU_V7M
@@ -872,6 +876,7 @@ source "board/spear/spear600/Kconfig"
 source "board/spear/x600/Kconfig"
 source "board/st-ericsson/snowball/Kconfig"
 source "board/st-ericsson/u8500/Kconfig"
+source "board/st/stm3210e-eval/Kconfig"
 source "board/st/stm32f429-discovery/Kconfig"
 source "board/st/stv0991/Kconfig"
 source "board/sunxi/Kconfig"
