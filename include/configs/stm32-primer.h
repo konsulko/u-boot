@@ -1,0 +1,116 @@
+/*
+ * (C) Copyright 2015
+ * Kamil Lulko, <rev13@wp.pl>
+ *
+ * SPDX-License-Identifier:	GPL-2.0+
+ */
+
+#ifndef __CONFIG_H
+#define __CONFIG_H
+
+#define CONFIG_STM32F1
+#define CONFIG_STM32_PRIMER
+#define CONFIG_SYS_GENERIC_BOARD
+
+#define CONFIG_BOARD_EARLY_INIT_F
+
+#define CONFIG_SYS_FLASH_BASE		0x08000000
+
+#define CONFIG_SYS_INIT_SP_ADDR		0x20010000
+#define CONFIG_SYS_TEXT_BASE		0x08000000
+
+#define CONFIG_SYS_ICACHE_OFF
+#define CONFIG_SYS_DCACHE_OFF
+
+#define CONFIG_SYS_RAM_SIZE		0x00018000
+#define CONFIG_SYS_SDRAM_BASE		0x20000000
+#define CONFIG_SYS_LOAD_ADDR		0x20010000
+#define CONFIG_LOADADDR			0x20010000
+
+#define CONFIG_SYS_MAX_FLASH_SECT	256
+#define CONFIG_SYS_MAX_FLASH_BANKS	2
+
+#define CONFIG_ENV_IS_IN_FLASH
+#define CONFIG_ENV_OFFSET		(64 << 10)
+#define CONFIG_ENV_SECT_SIZE		(2 << 10)
+#define CONFIG_ENV_SIZE			(2 << 10)
+
+#define CONFIG_GPIO_LED
+
+/* Status LEDs */
+#define CONFIG_STATUS_LED
+#define CONFIG_BOARD_SPECIFIC_LED
+#define STATUS_LED_RED			64
+#define STATUS_LED_GREEN		65
+/* Red */
+#define STATUS_LED_BIT			STATUS_LED_RED
+#define STATUS_LED_STATE		STATUS_LED_ON
+#define STATUS_LED_PERIOD		(CONFIG_SYS_HZ / 2)
+/* Green */
+#define STATUS_LED_BIT1			STATUS_LED_GREEN
+#define STATUS_LED_STATE1		STATUS_LED_ON
+#define STATUS_LED_PERIOD1		(CONFIG_SYS_HZ / 2)
+/* Boot LED */
+#define STATUS_LED_BOOT			STATUS_LED_GREEN
+
+#define CONFIG_STM32_GPIO
+#define CONFIG_STM32_SERIAL
+#define CONFIG_STM32_USART1
+
+#define CONFIG_STM32_HSE_HZ		12000000
+
+#define CONFIG_SYS_HZ_CLOCK		1000000	/* Timer is clocked at 1MHz */
+
+#define CONFIG_SYS_CBSIZE		256
+#define CONFIG_SYS_PBSIZE		(CONFIG_SYS_CBSIZE \
+					+ sizeof(CONFIG_SYS_PROMPT) + 16)
+
+#define CONFIG_SYS_MAXARGS		16
+
+#define CONFIG_SYS_MALLOC_LEN		(2048)
+
+#define CONFIG_STACKSIZE		(2048)
+
+#define CONFIG_BAUDRATE			115200
+
+#define CONFIG_SYS_BARGSIZE		64
+
+#define CONFIG_BOOTDELAY		3
+#define CONFIG_AUTOBOOT
+
+/*
+ * Command line configuration.
+ */
+#undef CONFIG_CMD_BDI		/* bdinfo			*/
+#undef CONFIG_CMD_BOOTD		/* bootd			*/
+#define CONFIG_CMD_ECHO		/* echo arguments		*/
+#define CONFIG_CMD_LOADB	/* loadb			*/
+#define CONFIG_CMD_MEMORY	/* md mm nm mw cp cmp crc base loop */
+#undef CONFIG_CMD_MISC		/* Misc functions like sleep etc*/
+#undef CONFIG_CMD_RUN		/* run command in env variable	*/
+#undef CONFIG_CMD_SAVEENV	/* saveenv			*/
+#undef CONFIG_CMD_EXPORTENV
+#undef CONFIG_CMD_IMPORTENV
+#undef CONFIG_CRC32
+
+#undef CONFIG_SYS_HUSH_PARSER
+#define CONFIG_SYS_PROMPT	       "STM32-EvoPrimer> "
+#undef CONFIG_AUTO_COMPLETE
+#undef CONFIG_CMDLINE_EDITING
+
+#define CONFIG_CMD_FLASH
+#undef CONFIG_CMD_MISC
+#undef CONFIG_CMD_TIMER
+
+#undef CONFIG_BOOTM_LINUX
+#undef CONFIG_BOOTM_NETBSD
+#undef CONFIG_BOOTM_PLAN9
+#undef CONFIG_BOOTM_RTEMS
+#undef CONFIG_BOOTM_VXWORKS
+
+#undef CONFIG_GZIP
+#undef CONFIG_ZLIB
+#undef CONFIG_PARTITIONS
+
+
+#endif /* __CONFIG_H */

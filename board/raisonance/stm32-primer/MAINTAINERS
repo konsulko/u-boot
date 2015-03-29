@@ -1,0 +1,5 @@
+M:	Matt Porter <mporter@konsulko.com>
+S:	Maintained
+F:	board/raisonance/stm32-primer/
+F:	include/configs/stm32-primer.h
+F:	configs/stm32-primer_defconfig
