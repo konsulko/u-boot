@@ -38,6 +38,10 @@ static int do_go(cmd_tbl_t *cmdtp, int flag, int argc, char * const argv[])
 	 * pass address parameter as argv[0] (aka command name),
 	 * and all remaining args
 	 */
+#ifdef CONFIG_CPU_V7M
+	/* For ARM V7M, set bit zero to stay in Thumb mode */
+	addr++;
+#endif
 	rc = do_go_exec ((void *)addr, argc - 1, argv + 1);
 	if (rc != 0) rcode = 1;
 
